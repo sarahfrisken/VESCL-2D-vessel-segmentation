@@ -69,7 +69,7 @@ GL_ContourRenderer::GL_ContourRenderer(RendererType type) :
 		}
 	}
 	catch (const std::exception& e) {
-		std::cout << "Exception " << e.what() << endl;
+		std::cout << "Exception " << e.what() << std::endl;
 		delete m_shaderProgram;
 		m_shaderProgram = nullptr;
 		return;
@@ -249,7 +249,7 @@ void GL_ContourRenderer::setVertexBuffer(std::list<Curve::PointVector> curvePoin
 		vertices = new GLfloat[(double)maxNumCells * numFloatsPerCell];
 	}
 	catch (const std::bad_alloc& e) {
-		std::cout << "Memory Allocation " << "failure: " << e.what() << endl;
+		std::cout << "Memory Allocation " << "failure: " << e.what() << std::endl;
 		return;
 	}
 
