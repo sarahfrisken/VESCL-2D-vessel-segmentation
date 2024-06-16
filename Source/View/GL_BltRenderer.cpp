@@ -34,7 +34,7 @@ GL_BltRenderer::GL_BltRenderer()
 		}
 	}
 	catch (const std::exception& e) {
-		std::cout << "Exception " << e.what() << endl;
+		std::cout << "Exception " << e.what() << std::endl;
 		delete m_shaderProgram;
 		m_shaderProgram = nullptr;
 		return;
