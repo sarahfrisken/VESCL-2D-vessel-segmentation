@@ -40,7 +40,7 @@ GL_ImageRenderer::GL_ImageRenderer() :
 		}
 	}
 	catch (const std::exception& e) {
-		std::cout << "Exception " << e.what() << endl;
+		std::cout << "Exception " << e.what() << std::endl;
 		delete m_shaderProgram;
 		m_shaderProgram = nullptr;
 		return;
