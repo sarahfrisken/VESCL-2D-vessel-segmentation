@@ -105,7 +105,7 @@ void GL_Exporter::exportSegmentation(const char* filename, float imageToExportSc
 		}
 	}
 	catch (const std::exception& e) {
-		std::cout << "Exception " << e.what() << endl;
+		std::cout << "Exception " << e.what() << std::endl;
 	}
 	m_context.doneCurrent();
 }
@@ -129,7 +129,7 @@ bool GL_Exporter::setupGL()
 		}
 	}
 	catch (const std::exception& e) {
-		std::cout << "Exception " << e.what() << endl;
+		std::cout << "Exception " << e.what() << std::endl;
 		return false;
 	}
 
