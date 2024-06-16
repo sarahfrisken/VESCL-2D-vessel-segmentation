@@ -71,7 +71,7 @@ void GL_View::mousePressEvent(QMouseEvent* e)
 
 		// Modify view transforms
 		m_mouseDownPos = QVector2D(e->pos());
-		QVector3D worldPoint = m_renderState->convertWindowToWorld(m_mouseDownPos);
+		QVector3D worldPoint = m_renderState->convertWindowToWorld(QVector3D(m_mouseDownPos, 0));
 		m_mouseDownWorld = QVector2D(worldPoint);
 		m_mouseDownWorldToView = m_renderState->worldToView();
 		m_mouseDownWinLevel = m_renderState->windowingLevel();
@@ -246,9 +246,9 @@ void GL_View::paintGL()
 	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT | GL_STENCIL_BUFFER_BIT);
 
 	QSize glViewportSize = this->size();
-	if (QT_VERSION < 0x060000) {   // Handle high def displays
+	//if (QT_VERSION < 0x060000) {   // Handle high def displays
 		glViewportSize *= screen()->devicePixelRatio();
-	}
+	//}
 
 	// Render the image if required and blt to screen
 	GLuint textureID;
