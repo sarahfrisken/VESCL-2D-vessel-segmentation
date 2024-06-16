@@ -50,7 +50,7 @@ void Model::save(std::ofstream& file)
         }
     }
     catch (const std::exception& e) {
-        std::cout << "Exception " << e.what() << endl;
+        std::cout << "Exception " << e.what() << std::endl;
     }
 
     file.close();
@@ -78,7 +78,7 @@ void Model::load(std::ifstream& file)
         }
     }
     catch (const std::exception& e) {
-    std::cout << "Exception " << e.what() << endl;
+    std::cout << "Exception " << e.what() << std::endl;
     }
 
     file.close();
@@ -197,10 +197,10 @@ void Model::fitSelectedToNearestVessel(float expectedRadius)
         activeCurve->applySmoothing(Curve::SmoothingType::Points);
     }
     catch (std::bad_alloc& e) {
-        std::cout << "Memory Allocation " << "No memory for curve fitting." << e.what() << endl;
+        std::cout << "Memory Allocation " << "No memory for curve fitting." << e.what() << std::endl;
     }
     catch (std::exception & e) {
-        std::cout << "Exception " << e.what() << endl;
+        std::cout << "Exception " << e.what() << std::endl;
     }
 }
 void Model::fitSelectedVesselWidth(float expectedRadius)
@@ -236,6 +236,6 @@ void Model::fitSelectedVesselWidth(float expectedRadius)
         activeCurve->applySmoothing(Curve::SmoothingType::Widths);
     }
     catch (std::exception& e) {
-        std::cout << "Exception " << e.what() << endl;
+        std::cout << "Exception " << e.what() << std::endl;
     }
 }
